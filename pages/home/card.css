@@ -1,0 +1,158 @@
+.aside-bar{
+    width: 503px;
+    height: 316px;
+    position: relative;
+    left: 175px;
+    top: 8px;
+}
+
+.div-card-aside{
+    width: 503px;
+    height: 316px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--color-grey-6);
+}
+
+.div-aside{
+    display: none;
+}
+
+.h2-card{
+    color: var(--color-grey-1);
+    font-size: var(--title-4);
+    padding: 28px 28px;
+}
+
+.box-card-vazio{
+    color: var(--color-grey-2);
+    font-size: var(--text-2);
+    padding: 28px 28px;
+}
+
+.ul-card-aside{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+
+.card-principal-aside{
+    width: 343px;
+    height: 160px;
+    background-color: var(--color-grey-6);
+    border-bottom: solid 1px var(--color-grey-3);
+}
+
+.card-mini-box-aside{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 28px 32px;
+}
+
+.card-title-aside{
+    width: 230px;
+    height: 54px;
+    color: var(--color-grey-1);
+    font-size: var(--text-2);
+}
+
+.delete-button{
+    width: 45px;
+    height: 38px;
+    background-image: url(../../assets/img/trash2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.show-card{
+    display: none;
+}
+
+@media (max-width: 400px){
+    .aside-bar{
+        width: 344px;
+        height: 100%;
+        position: relative;
+        left: -344px;
+        top: 1740px;
+    }
+    
+    .div-card-aside{
+        width: 343px;
+        height: 367px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: var(--color-grey-6);
+    }
+    
+    .div-aside{
+        display: none;
+    }
+    
+    .h2-card{
+        color: var(--color-grey-1);
+        font-size: var(--title-4);
+        padding: 28px 28px;
+    }
+    
+    .box-card-vazio{
+        color: var(--color-grey-2);
+        font-size: var(--text-2);
+        padding: 28px 28px;
+    }
+    
+    .ul-card-aside{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+    
+    
+    .card-principal-aside{
+        width: 343px;
+        height: 160px;
+        background-color: var(--color-grey-6);
+        border-bottom: solid 1px var(--color-grey-3);
+    }
+    
+    .card-mini-box-aside{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 28px 32px;
+    }
+    
+    .card-title{
+        width: 230px;
+        height: 54px;
+        color: var(--color-grey-1);
+        font-size: var(--text-2);
+    }
+    
+    .delete-button{
+        width: 45px;
+        height: 38px;
+        background-image: url(../../assets/img/trash2.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    
+    .show-card{
+        display: none;
+    }
+    
+}

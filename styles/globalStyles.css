@@ -43,6 +43,7 @@ body {
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: var(--color-grey-3);
 }
 
 @media(max-width: 991px){

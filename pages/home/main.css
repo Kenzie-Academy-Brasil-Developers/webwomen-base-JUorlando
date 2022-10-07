@@ -1,0 +1,199 @@
+.app{
+    max-width: 100%;
+    max-height: 1342px;
+    display: flex;
+    flex-direction: row;
+}
+
+.section-vagas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 30px;
+}
+
+.h2-vagas{
+    color: var(--color-grey-1);
+    font-size: var(--title-4);
+    padding-top: 32px;
+}
+
+.ul-card{
+    width: 818px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+}
+
+.card-principal{
+    width: 100%;
+    height: 307px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 28px 28px;
+    background-color: var(--color-grey-6);
+}
+
+.card-title{
+
+    color: var(--color-grey-1);
+    font-size: var(--title-4);
+}
+
+.card-mini-box{
+
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-grey-2);
+    font-size: var(--text-1);
+    padding-bottom: 77px;
+    padding-top: 10px;
+}
+
+.card-descrip{
+
+    color: var(--color-grey-2);
+    font-size: var(--text-1);
+}
+
+.card-form{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 35px;
+
+}
+
+.card-mod{
+    width: 111px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-grey-3);
+    color: var(--color-grey-2);
+    border: solid 1px var(--color-grey-3);
+    border-radius: var(--radius-default);
+    font-size: var(--text-1);
+
+}
+
+.card-button{
+    width: 268px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-brand-1);
+    color: var(--color-grey-6);
+    border: solid 1px var(--color-brand-1);
+    border-radius: var(--radius-default);
+    font-size: var(--text-1);
+}
+
+@media (max-width: 400px){
+    .app{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .section-vagas{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-bottom: 30px;
+    }
+    
+    .h2-vagas{
+        color: var(--color-grey-1);
+        font-size: var(--title-4);
+        padding-top: 32px;
+    }
+    
+    .ul-card{
+        width: 344px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    
+    }
+    
+    .card-principal{
+        width: 100%;
+        height: 530px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding: 28px 28px;
+        background-color: var(--color-grey-6);
+    }
+    
+    .card-title{
+        color: var(--color-grey-1);
+        font-size: var(--title-4);
+    }
+    
+    .card-mini-box{
+        width: 263px;
+        height: 22px;
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-grey-2);
+        font-size: var(--text-1);
+        padding-bottom: 77px;
+        padding-top: 10px;
+    }
+    
+    .card-descrip{
+        width: 268px;
+        height: 192px;
+        color: var(--color-grey-2);
+        font-size: var(--text-1);
+    }
+    
+    .card-form{
+        width: 268px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+    
+    }
+    
+    .card-mod{
+        width: 111px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-grey-3);
+        color: var(--color-grey-2);
+        border: solid 1px var(--color-grey-3);
+        border-radius: var(--radius-default);
+        font-size: var(--text-1);
+    
+    }
+    
+    .card-button{
+        width: 268px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-brand-1);
+        color: var(--color-grey-6);
+        border: solid 1px var(--color-brand-1);
+        border-radius: var(--radius-default);
+        font-size: var(--text-1);
+    }
+}
