@@ -54,18 +54,7 @@ function filtrandoCards(itens) {
     tagApply.addEventListener("click", (event) => {
 
         event.preventDefault()
-
-        tagApply.innerText = "Remover Candidatura"
-
-        document.querySelector(".div-card-aside").classList.add("show-card")
-
-        const favorito = localStorage.getItem("apply")
-
-        if(!favorito){
-
-            localStorage.setItem("apply", true)
-        } 
-
+        
         let NewCard = {
             id: id,
             title: title,
@@ -73,7 +62,25 @@ function filtrandoCards(itens) {
             local: location,
         }
 
+        document.querySelector(".div-card-aside").classList.add("show-card")
+        
         jobsData.push(NewCard)
+        
+        const favorito = localStorage.getItem("apply")
+        
+        if(!favorito){
+            
+            tagApply.innerText = "Remover Candidatura"
+            localStorage.setItem("apply", true)
+        } 
+
+        if(favorito){
+
+            tagApply.innerText = "Candidatar"
+            localStorage.removeItem("apply")
+            jobsData.remove(NewCard)
+        }
+
 
         filtrandoCards(itens)
 
