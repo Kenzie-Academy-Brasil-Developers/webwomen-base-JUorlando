@@ -65,20 +65,29 @@ function filtrandoCards(itens) {
         document.querySelector(".div-card-aside").classList.add("show-card")
         
         jobsData.push(NewCard)
-        
+
         const favorito = localStorage.getItem("apply")
         
         if(!favorito){
             
             tagApply.innerText = "Remover Candidatura"
-            localStorage.setItem("apply", true)
+            localStorage.setItem("apply", JSON.stringify(NewCard))
         } 
 
         if(favorito){
 
             tagApply.innerText = "Candidatar"
             localStorage.removeItem("apply")
-            jobsData.remove(NewCard)
+            const buttonDelete = document.querySelector(".delete-button")
+            tagDelete.addEventListener("click", (event) => {
+
+                event.preventDefault()
+
+                let li = event.path[2]
+                li.remove()
+                filtrandoCards(itens)
+    
+            })
         }
 
 
