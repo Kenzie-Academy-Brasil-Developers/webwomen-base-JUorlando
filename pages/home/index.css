@@ -43,10 +43,10 @@
     border-radius: var(--radius-default);
 }
 
-@media(max-width: 400px){
+@media(max-width: 600px){
     
     .header{
-        width: 344px;
+        max-width: 100%;
         height: 789.5px;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../assets/img/fundo.jpg);
         background-repeat: no-repeat;

@@ -110,10 +110,12 @@
     font-size: var(--text-1);
 }
 
-@media (max-width: 400px){
+@media (max-width: 600px){
     .app{
         max-width: 100%;
         max-height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     .section-vagas{
@@ -132,7 +134,7 @@
     }
     
     .ul-card{
-        width: 344px;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -156,7 +158,7 @@
     }
     
     .card-mini-box{
-        width: 263px;
+        width: 100%;
         height: 22px;
         display: flex;
         justify-content: space-between;
@@ -167,24 +169,25 @@
     }
     
     .card-descrip{
-        width: 268px;
+        width: 100%;
         height: 192px;
         color: var(--color-grey-2);
         font-size: var(--text-1);
     }
     
     .card-form{
-        width: 268px;
+        width: 100%;
         height: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 35px;
     
     }
     
     .card-mod{
-        width: 111px;
+        max-width: 30%;
         height: 30px;
         display: flex;
         justify-content: center;
@@ -198,7 +201,7 @@
     }
     
     .card-button{
-        width: 268px;
+        max-width: 268px;
         height: 38px;
         display: flex;
         justify-content: center;
@@ -211,7 +214,7 @@
     }
 
     .card-button-remove{
-    width: 268px;
+    max-width: 268px;
     height: 38px;
     display: none;
     justify-content: center;
