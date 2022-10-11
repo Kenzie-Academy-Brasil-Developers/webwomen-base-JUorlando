@@ -121,7 +121,7 @@ function removerCandidatura(event) {
 
     removeApply.id = id
 
-    newArray.splice(removeApply)
+    newArray.splice(removeApply, 1)
     renderNewCard(newArray)
 
     const favorito = localStorage.getItem("apply")
@@ -167,9 +167,13 @@ function renderNewCard(newArray) {
             const favorito = localStorage.getItem("apply")
 
             let add = document.querySelector(".card-button")
+            
             let remove = document.querySelector(".card-button-remove")
+
             add.classList.remove("hide-card")
+
             remove.classList.remove("show-card")
+
             document.querySelector(".box-card-vazio").classList.remove("hide-card")
             
             if (favorito) {
