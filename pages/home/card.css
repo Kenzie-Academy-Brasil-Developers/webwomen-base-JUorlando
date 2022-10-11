@@ -73,6 +73,10 @@
 
 
 .show-card{
+    display: flex;
+}
+
+.hide-card{
     display: none;
 }
 
@@ -148,11 +152,6 @@
         background-image: url(../../assets/img/trash2.png);
         background-repeat: no-repeat;
         background-position: center;
-    }
-    
-    
-    .show-card{
-        display: none;
     }
     
 }

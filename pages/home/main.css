@@ -97,6 +97,19 @@
     font-size: var(--text-1);
 }
 
+.card-button-remove{
+    width: 268px;
+    height: 38px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-brand-1);
+    color: var(--color-grey-6);
+    border: solid 1px var(--color-brand-1);
+    border-radius: var(--radius-default);
+    font-size: var(--text-1);
+}
+
 @media (max-width: 400px){
     .app{
         max-width: 100%;
@@ -196,4 +209,17 @@
         border-radius: var(--radius-default);
         font-size: var(--text-1);
     }
+
+    .card-button-remove{
+    width: 268px;
+    height: 38px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-brand-1);
+    color: var(--color-grey-6);
+    border: solid 1px var(--color-brand-1);
+    border-radius: var(--radius-default);
+    font-size: var(--text-1);
+}
 }

@@ -30,6 +30,7 @@ function filtrandoCards(itens) {
     let tagForm = document.createElement("form")
     let tagMod = document.createElement("p")
     let tagApply = document.createElement("button")
+    let tagRemove = document.createElement("button")
 
     tagLi.classList = "card-principal"
     tagTitle.classList = "card-title"
@@ -40,6 +41,7 @@ function filtrandoCards(itens) {
     tagForm.classList = "card-form"
     tagMod.classList = "card-mod"
     tagApply.classList = "card-button"
+    tagRemove.classList = "card-button-remove"
 
     tagTitle.innerHTML = `${title}`
     tagEmp.innerHTML = `${enterprise}`
@@ -47,54 +49,99 @@ function filtrandoCards(itens) {
     tagDesc.innerHTML = `${descrition}`
     tagMod.innerHTML = `${modalities}`
 
-    tagApply.innerHTML = "Candidatar"
-    tagApply.id = "include-card"
+    tagApply.innerText = "Candidatar"
+    tagApply.id = id
     tagApply.type = "button"
 
-    tagApply.addEventListener("click", (event) => {
-
-        event.preventDefault()
-        
-        let NewCard = {
-            id: id,
-            title: title,
-            enterprise: enterprise,
-            local: location,
-        }
-
-        document.querySelector(".div-card-aside").classList.add("show-card")
-        
-        jobsData.push(NewCard)
-
-        const favorito = localStorage.getItem("apply")
-        
-        if(!favorito){
-            
-            tagApply.innerText = "Remover Candidatura"
-            localStorage.setItem("apply", JSON.stringify(NewCard))
-        } 
-
-        if(favorito){
-
-            tagApply.innerText = "Candidatar"
-            localStorage.removeItem("apply")
-            const buttonDelete = document.querySelector(".delete-button")
-            tagDelete.addEventListener("click", (event) => {
-
-                event.preventDefault()
-
-                let li = event.path[2]
-                li.remove()
-                filtrandoCards(itens)
+    tagRemove.innerText = "Remover Candidatar"
+    tagRemove.id = id
+    tagRemove.type = "button"
     
-            })
-        }
+    tagApply.addEventListener("click", () => {
+        tagRemove.classList.add("show-card")
+        tagApply.classList.add("hide-card")
+        document.querySelector(".box-card-vazio").classList.add("hide-card")
+    })
+
+    tagRemove.addEventListener("click", () => {
+        tagApply.classList.remove("hide-card")
+        tagRemove.classList.remove("show-card")
+        document.querySelector(".box-card-vazio").classList.remove("hide-card")
+    })
+
+    tagForm.append(tagMod, tagApply, tagRemove)
+    tagDiv.append(tagEmp, tagLocal)
+    tagLi.append(tagTitle, tagDiv, tagDesc, tagForm)
+
+    return tagLi
+
+}
+
+let buttonApply = document.querySelectorAll(".card-button")
 
 
-        filtrandoCards(itens)
+buttonApply.forEach((button) => {
+    
+    button.addEventListener("click", salvarCandidatura)
+    
+})
 
-        const localCardAside = document.querySelector(".ul-card-aside")
-        
+
+function salvarCandidatura(event) {
+    
+    let id = event.target.id
+    
+    let objetoComFilter = jobsData.filter((elemento) => elemento.id == id)
+
+    newArray.push(objetoComFilter[0])
+    renderNewCard(newArray)
+
+    const favorito = localStorage.getItem("apply")
+
+    if (!favorito) {
+
+        localStorage.setItem("apply", JSON.stringify(newArray))
+    }
+
+}
+
+let removeApply = document.querySelectorAll(".card-button-remove")
+
+
+removeApply.forEach((button) => {
+    
+    button.addEventListener("click", removerCandidatura)
+    
+})
+
+
+function removerCandidatura(event) {
+
+    let id = event.target.id
+
+    removeApply.id = id
+
+    newArray.splice(removeApply)
+    renderNewCard(newArray)
+
+    const favorito = localStorage.getItem("apply")
+
+    if (favorito) {
+
+        localStorage.removeItem("apply", JSON.stringify(newArray))
+    }
+
+}
+
+function renderNewCard(newArray) {
+
+    const localCardAside = document.querySelector(".ul-card-aside")
+
+
+    localCardAside.innerHTML = ""
+
+    newArray.forEach((job, index) => {
+
         let tagLi = document.createElement("li")
         let tagTitle = document.createElement("h3")
         let tagDelete = document.createElement("button")
@@ -109,40 +156,38 @@ function filtrandoCards(itens) {
         tagEmp.classList = "card-emp"
         tagLocal.classList = "card-local"
 
-        tagTitle.innerHTML = NewCard.title
-        tagEmp.innerHTML = NewCard.enterprise
-        tagLocal.innerHTML = NewCard.local
+        tagTitle.innerText = job.title
+        tagEmp.innerText = job.enterprise
+        tagLocal.innerText = job.location
 
-        tagDelete.id = NewCard.id
+        tagDelete.id = job.id
 
-        tagDelete.addEventListener("click", (event) => {
-
-            event.preventDefault()
+        tagDelete.addEventListener("click", () => {
 
             const favorito = localStorage.getItem("apply")
-    
-            if(favorito){
-    
+
+            let add = document.querySelector(".card-button")
+            let remove = document.querySelector(".card-button-remove")
+            add.classList.remove("hide-card")
+            remove.classList.remove("show-card")
+            document.querySelector(".box-card-vazio").classList.remove("hide-card")
+            
+            if (favorito) {
+
                 localStorage.removeItem("apply")
             }
- 
-            document.querySelector(".card-button").innerText = "Candidatar"
-            let li = event.path[2]
-            li.remove()
-            filtrandoCards(itens)
+
+            newArray.splice(index, 1)
+            renderNewCard(newArray)
+
 
         })
 
         tagDiv.append(tagTitle, tagDelete, tagEmp, tagLocal)
         tagLi.append(tagDiv)
         localCardAside.append(tagLi)
+
     })
 
-
-    tagForm.append(tagMod, tagApply)
-    tagDiv.append(tagEmp, tagLocal)
-    tagLi.append(tagTitle, tagDiv, tagDesc, tagForm)
-
-    return tagLi
-
 }
+
